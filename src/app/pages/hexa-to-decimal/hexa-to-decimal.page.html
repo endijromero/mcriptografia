@@ -1,0 +1,52 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>HexaToDecimal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+<app-header [titulo]="nombre || 'Input Forms'"></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversiones</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form #formulario="ngForm" (ngSubmit)="generarClave(formulario)">
+    <ion-list-header>
+      <ion-label>Formulario válido: {{ formulario.valid }}</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Llave Combinada:</ion-label>
+      <ion-input type="text" placeholder="Llave Combinada" name="combinedkey" [(ngModel)]="params.combinedkey" [disabled]="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Componente Uno:</ion-label>
+      <ion-input type="text" placeholder="Componente Uno" name="componentone" [(ngModel)]="params.componentone" pattern="^([a-fA-F0-9]+)$" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Componente Dos:</ion-label>
+      <ion-input type="text" placeholder="Componente Dos" name="componenttwo" [(ngModel)]="params.componenttwo" pattern="^([a-fA-F0-9]+)$" required></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="formulario.invalid" type="submit" expand="block">
+      Generar Clave
+    </ion-button>
+
+
+  </form>
+  <ion-button type="submit" (click)="combinarNumeros()" expand="block">
+    Combinar Claves
+  </ion-button>
+
+</ion-content>
+
+<ion-content>
+
+</ion-content>
