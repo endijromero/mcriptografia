@@ -1,0 +1,7 @@
+{
+  "name": "mcriptografia",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
