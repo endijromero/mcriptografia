@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts",
+    "**/index.ts",
+    "**/environment*.ts"
+  ],
+  "exclude": [
+    "src/**/*.e2e.ts",
+    "src/**/*.mocks.ts",
+  ]
+}
