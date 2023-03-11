@@ -28,12 +28,13 @@
 
 
     <ion-list>
-      <ion-row class="ion-justify-content-around ion-align-items-center">
-        <!-- <ion-row class="mt-5"> -->
+      <!-- <ion-row class="ion-justify-content-around ion-align-items-center"> -->
+      <ion-row class="mt-5">
 
         <ion-item *ngFor="let c of integrantes | async">
           <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
-          {{ c.nombres }} {{ c.apellidos }}
+          <!-- {{ c.nombres }} {{ c.apellidos }} -->
+          {{ c.alias }}
           <br>
         </ion-item>
       </ion-row>

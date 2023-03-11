@@ -14,7 +14,8 @@
     <ion-title>Conversiones</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content>
+  <!-- <ion-content class="ion-padding"> -->
   <form #formulario="ngForm" (ngSubmit)="generarClave(formulario)">
     <ion-list-header>
       <ion-label>Formulario válido: {{ formulario.valid }}</ion-label>
@@ -22,31 +23,34 @@
 
     <ion-item>
       <ion-label>Llave Combinada:</ion-label>
-      <ion-input type="text" placeholder="Llave Combinada" name="combinedkey" [(ngModel)]="params.combinedkey" [disabled]="true"></ion-input>
+      <ion-textarea type="text" placeholder="Llave Combinada" name="combinedkey" [(ngModel)]="params.combinedkey" [disabled]="true"></ion-textarea>
     </ion-item>
-
+    <br>
     <ion-item>
-      <ion-label>Componente Uno:</ion-label>
-      <ion-input type="text" placeholder="Componente Uno" name="componentone" [(ngModel)]="params.componentone" pattern="^([a-fA-F0-9]+)$" required></ion-input>
+      <ion-col>
+        <ion-row>
+          <ion-label>Componente Uno:</ion-label>
+        </ion-row>
+      </ion-col>
+      <ion-row>
+        <ion-textarea type="text" placeholder="Componente Uno" name="componentone" [(ngModel)]="params.componentone" maxlength="32" pattern="^([a-fA-F0-9]+)$" required></ion-textarea>
+      </ion-row>
     </ion-item>
+    <br>
 
     <ion-item>
       <ion-label>Componente Dos:</ion-label>
-      <ion-input type="text" placeholder="Componente Dos" name="componenttwo" [(ngModel)]="params.componenttwo" pattern="^([a-fA-F0-9]+)$" required></ion-input>
+      <ion-textarea type="text" placeholder="Componente Dos" name="componenttwo" [(ngModel)]="params.componenttwo" maxlength="32" pattern="^([a-fA-F0-9]+)$" required></ion-textarea>
     </ion-item>
 
-    <ion-button [disabled]="formulario.invalid" type="submit" expand="block">
+    <!-- <ion-button [disabled]="formulario.invalid" type="submit" expand="block"> -->
+    <ion-button type="submit" expand="block">
       Generar Clave
     </ion-button>
-
-
   </form>
-  <ion-button type="submit" (click)="combinarNumeros()" expand="block">
+  <ion-button type="submit" (click)="combinarNumeros()" expand="block" [disabled]="formulario.invalid">
     Combinar Claves
   </ion-button>
-
 </ion-content>
-
 <ion-content>
-
 </ion-content>
