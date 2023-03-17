@@ -5,6 +5,7 @@ import { Componente } from '../interfaces/interfaces';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
   constructor(private http: HttpClient) { }

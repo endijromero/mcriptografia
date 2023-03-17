@@ -1,56 +1,42 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>HexaToDecimal</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [titulo]="nombre"></app-header>
 
-<ion-content>
-
-</ion-content> -->
-
-<app-header [titulo]="nombre || 'Input Forms'"></app-header>
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Conversiones</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-  <!-- <ion-content class="ion-padding"> -->
-  <form #formulario="ngForm" (ngSubmit)="generarClave(formulario)">
-    <ion-list-header>
-      <ion-label>Formulario válido: {{ formulario.valid }}</ion-label>
-    </ion-list-header>
-
-    <ion-item>
-      <ion-label>Llave Combinada:</ion-label>
-      <ion-textarea type="text" placeholder="Llave Combinada" name="combinedkey" [(ngModel)]="params.combinedkey" [disabled]="true"></ion-textarea>
-    </ion-item>
+<ion-content class="ion-page ion-padding" fullscreen="true">
+  <ion-list class="bgInicioNoImg">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Llave Combinada</ion-card-subtitle>
+        <ion-card-title>
+          <ion-textarea type="text" placeholder="Llave Combinada" name="combinedkey" [(ngModel)]="params.combinedkey" [disabled]="true"></ion-textarea>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="action-card">
+      <ion-card-header>
+        <ion-card-subtitle>Componente Uno:</ion-card-subtitle>
+        <ion-card-title>
+          <ion-textarea type="text" placeholder="Componente Uno" name="componentone" [(ngModel)]="params.componentone" maxlength="32" pattern="^([a-fA-F0-9]+)$" required></ion-textarea>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="action-card">
+      <ion-card-header>
+        <ion-card-subtitle>Componente Dos:</ion-card-subtitle>
+        <ion-card-title>
+          <ion-textarea type="text" placeholder="Componente Dos" name="componenttwo" [(ngModel)]="params.componenttwo" maxlength="32" pattern="^([a-fA-F0-9]+)$" required></ion-textarea>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
     <br>
-    <ion-item>
-      <ion-col>
-        <ion-row>
-          <ion-label>Componente Uno:</ion-label>
-        </ion-row>
-      </ion-col>
-      <ion-row>
-        <ion-textarea type="text" placeholder="Componente Uno" name="componentone" [(ngModel)]="params.componentone" maxlength="32" pattern="^([a-fA-F0-9]+)$" required></ion-textarea>
-      </ion-row>
-    </ion-item>
+    <div style="position: relative;align-items: center;text-align: center;">
+      <ion-button type="submit" (click)="generarClave()">
+        Generar Clave
+      </ion-button>
+    </div>
     <br>
-
-    <ion-item>
-      <ion-label>Componente Dos:</ion-label>
-      <ion-textarea type="text" placeholder="Componente Dos" name="componenttwo" [(ngModel)]="params.componenttwo" maxlength="32" pattern="^([a-fA-F0-9]+)$" required></ion-textarea>
-    </ion-item>
-
-    <!-- <ion-button [disabled]="formulario.invalid" type="submit" expand="block"> -->
-    <ion-button type="submit" expand="block">
-      Generar Clave
-    </ion-button>
-  </form>
-  <ion-button type="submit" (click)="combinarNumeros()" expand="block" [disabled]="formulario.invalid">
-    Combinar Claves
-  </ion-button>
-</ion-content>
-<ion-content>
+    <div style="position: relative;align-items: center;text-align: center;">
+      <ion-button type="submit" (click)="combinarNumeros()">
+        Combinar Claves
+      </ion-button>
+    </div>
+  </ion-list>
 </ion-content>

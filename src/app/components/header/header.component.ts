@@ -7,9 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class HeaderComponent {
-
   @Input() titulo: string = '';
-
-
-
 }

@@ -23,22 +23,41 @@
     </ion-item>
   </ion-list> -->
 
-<ion-content>
-  <ion-grid class="bgInicio">
-
-
+<ion-content [fullscreen]="true" class="ion-page ion-padding">
+  <!-- <ion-grid class="bgInicio">
     <ion-list>
-      <!-- <ion-row class="ion-justify-content-around ion-align-items-center"> -->
       <ion-row class="mt-5">
-
         <ion-item *ngFor="let c of integrantes | async">
           <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
-          <!-- {{ c.nombres }} {{ c.apellidos }} -->
-          {{ c.alias }}
-          <br>
+          <ion-row class="mt-5">
+            {{ c.alias }}
+          </ion-row>
         </ion-item>
       </ion-row>
     </ion-list>
-  </ion-grid>
+  </ion-grid> -->
 
+  <ion-list class="bgInicioImg">
+
+    <ion-grid>
+
+
+      <ion-row *ngIf="!integrantes" class="ion-justify-content-center">
+        <h4 style="color: #666666">
+          <strong>
+            Sin Resultados
+          </strong>
+        </h4>
+      </ion-row>
+      <ng-container *ngFor="let item of integrantes | async">
+        <ion-row>
+          <ion-icon class="nameIcon" name="person"></ion-icon>
+          <h5 class="namesSch">
+            <strong>{{ item.alias }}</strong>
+          </h5>
+        </ion-row>
+      </ng-container>
+
+    </ion-grid>
+  </ion-list>
 </ion-content>

@@ -1,0 +1,87 @@
+<app-header [titulo]="nombre"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-page ion-padding">
+  <ion-list class="bgInicioNoImg">
+    <ion-slides pager="true" [options]="slideOpts" #slide (ionSlideDidChange)="SlideChanges(slide)">
+      <ion-slide>
+        <table>
+          <tr>
+            <td>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Texto a cifrar</ion-card-subtitle>
+                  <ion-card-title>
+                    <ion-textarea type="text" placeholder="Texto a cifrar" name="textoCifrarEntrada" [(ngModel)]="params.Cifrado.textoEntrada"></ion-textarea>
+                  </ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br>
+              <br>
+              <ion-button type="submit" color="success" (click)="cifradoAtbash()">Cifrar texto</ion-button>
+              <ion-button type="submit" color="warning" (click)="limpiarComponentesCifrado()">Limpiar</ion-button>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Texto cifrado</ion-card-subtitle>
+                  <ion-card-title>
+                    <ion-textarea type="text" placeholder="Texto cifrado" name="textoCifradoSalida" [(ngModel)]="params.Cifrado.textoSalida" [disabled]="true"></ion-textarea>
+                  </ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </td>
+          </tr>
+        </table>
+      </ion-slide>
+
+      <ion-slide>
+        <table>
+          <tr>
+            <td>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Texto a descifrar</ion-card-subtitle>
+                  <ion-card-title>
+                    <ion-textarea type="text" placeholder="Texto cifrado" name="textoCifradoEntrada" [(ngModel)]="params.Descifrado.textoEntrada"></ion-textarea>
+                  </ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br>
+              <br>
+              <ion-button type="submit" color="success" (click)="DescifradoAtbash()">Descifrar texto</ion-button>
+              <ion-button type="submit" color="warning" (click)="limpiarComponentesDescifrado()">Limpiar</ion-button>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Texto Descifrado</ion-card-subtitle>
+                  <ion-card-title>
+                    <ion-textarea type="text" placeholder="Texto descifrado" name="textoDescifrado" [(ngModel)]="params.Descifrado.textoSalida" [disabled]="true"></ion-textarea>
+                  </ion-card-title>
+                </ion-card-header>
+              </ion-card>
+            </td>
+          </tr>
+        </table>
+      </ion-slide>
+
+
+    </ion-slides>
+  </ion-list>
+</ion-content>

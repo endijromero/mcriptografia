@@ -1,0 +1,256 @@
+@import "variables.scss";
+@import "CustomVariables.scss";
+
+.btnmenu {
+  float: right;
+  background: white;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border-radius: 7px;
+  color: $cyan;
+}
+
+.logo {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+ion-content {
+  --ion-background-color: #f7f7f7;
+}
+
+ion-label {
+  line-height: 10px;
+  margin-top: 5px;
+}
+
+ion-tab-button {
+  background: $cyan;
+  padding: 5px;
+  color: #fff;
+}
+
+ion-tab-bar {
+  background: #0079c8;
+}
+
+ion-grid {
+  padding: 0;
+}
+
+ion-card {
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: none;
+  background: $white;
+}
+
+.button-round {
+  --border-radius: 10px;
+  text-transform: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  height: 45px;
+  white-space: normal;
+}
+
+.volver {
+  background: white;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border-radius: 7px;
+  color: #0079c8;
+}
+
+ion-segment {
+  background: #f0f0f0;
+  margin: 15px auto;
+  border-radius: 15px;
+  --indicator-color: transparent !important;
+  --indicator-color-checked: transparent !important;
+  --indicator-height: 0px !important;
+}
+
+ion-segment-button {
+  border-radius: 15px;
+  margin: 10px;
+  border-bottom: none;
+  color: $navy;
+  text-transform: initial;
+  font-family: $font;
+  --indicator-color: transparent !important;
+  --indicator-color-checked: transparent !important;
+  --border-width: 0px;
+  --indicator-color-checked: 0;
+  --indicator-height: 0px !important;
+}
+
+.segment-button-has-label label {
+  margin-top: 0;
+  font-size: 16px !important;
+  --indicator-color: transparent !important;
+  --indicator-color-checked: transparent !important;
+  --indicator-height: 0px !important;
+}
+
+.segment-button-checked {
+  background: white;
+  --indicator-color: transparent !important;
+  --indicator-color-checked: transparent !important;
+  --border-width: 0px;
+  --indicator-color-checked: 0;
+  --indicator-height: 0px !important;
+}
+
+p {
+  font-size: 16px;
+  font-family: $font;
+  margin: 0;
+}
+
+.txtright {
+  text-align: right;
+}
+
+.txtcenter {
+  text-align: center;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-3 {
+  margin-bottom: 20px;
+}
+
+.mb-1 {
+  margin-bottom: 5px;
+}
+
+.titlesection {
+  color: $cyan;
+  font-family: $font;
+  font-weight: 900;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.bp_btnprimary,
+.bp_btnsecondary {
+  --border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  height: 45px;
+  text-transform: none;
+  width: 90%;
+  margin: 15px auto;
+}
+
+.bp_btnsecondaryNegative {
+  --border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  width: 90%;
+  height: 45px;
+  margin: 15px auto;
+  text-transform: none;
+  display: flex;
+  justify-content: center;
+}
+
+h4.subtitle {
+  text-align: center;
+  width: 100%;
+  color: $cyan;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $font;
+  margin: 10px 0px;
+}
+
+h4.subsubtitle {
+  text-align: left;
+  width: 100%;
+  color: $subtitle;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $font;
+  margin: 10px 0px;
+}
+
+th.subsubtitle {
+  text-align: left;
+  width: 100%;
+  color: $subtitle;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $font;
+  margin: 10px 0px;
+  padding: 2% 0% 2% 0%;
+}
+
+.detallepoliza {
+  margin: 15px;
+}
+
+.bpinput {
+  color: $navy;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.bpinputs {
+  background: $white;
+  border: solid 1px $cyan;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  --border-style: none;
+}
+
+.item-select {
+  border: solid 1px #0579c8;
+  border-radius: 10px;
+  margin-top: 30px;
+  --border-style: none;
+}
+
+.gray-title {
+  color: #6A6A6A;
+  font-size: 18px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+.paragraph,
+.paragraph p,
+.paragraph ul li p {
+  font-size: 16px !important;
+  line-height: 20px;
+  color: #555555;
+  text-align: left;
+}
+
+.red {
+  color: red;
+}
+
+ion-card-content p {
+  font-size: 16px !important;
+}

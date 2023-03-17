@@ -1,7 +1,13 @@
 [
   {
     "icon": "lock-closed-sharp",
-    "name": "Conversiones",
-    "redirectTo": "/hexa-to-decimal"
+    "name": "Hexadecimal to decimal",
+    "redirectTo": "/hexa-to-decimal",
+    "submenu": []
+  },
+  {
+    "icon": "lock-closed-sharp",
+    "name": "Atbash",
+    "redirectTo": "/atbash"
   }
 ]

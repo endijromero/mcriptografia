@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'hexa-to-decimal',
     loadChildren: () => import('./pages/hexa-to-decimal/hexa-to-decimal.module').then(m => m.HexaToDecimalPageModule)
   },
+  {
+    path: 'atbash',
+    loadChildren: () => import('./pages/atbash/atbash.module').then( m => m.AtbashPageModule)
+  },
 ];
 
 @NgModule({

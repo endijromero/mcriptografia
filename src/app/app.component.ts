@@ -35,6 +35,8 @@ export class AppComponent {
       // this.statusBar.styleDefault();
       // this.splashScreen.hide();
       this.componentes = this.dataService.getMenuOpts();
+      console.log("this.componentes", JSON.stringify(this.componentes));
+
     });
   }
 }

@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, Renderer2, RendererFactory2 } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-hexa-to-decimal',
@@ -16,21 +16,18 @@ export class HexaToDecimalPage implements OnInit {
   binaryComponentTwo = ""
   binaryCombinedKey = ""
 
-
   params = {
     combinedkey: '',
     componentone: '',
     componenttwo: ''
   }
 
-  constructor(private renderer: Renderer2,
-    private renderer2: RendererFactory2,
-    private el: ElementRef) { }
+  constructor(private alertController: AlertController) { }
 
   ngOnInit() {
   }
 
-  generarClave(formulario: NgForm) {
+  generarClave() {
     var componente1 = "";
     var componente2 = "";
     var binario1 = "";
@@ -75,10 +72,9 @@ export class HexaToDecimalPage implements OnInit {
       let charCode1 = str1.charCodeAt(i);
       let charCode2 = str2.charCodeAt(i % str2.length);
       let xorResult = charCode1 ^ charCode2;
+
       result += xorResult;
-      // console.log("result:::", result);
       console.log("xorResult:::", xorResult);
-      //result += String.fromCharCode(xorResult);
     }
 
     return result;
@@ -106,10 +102,9 @@ export class HexaToDecimalPage implements OnInit {
   }
 
   combinarNumeros() {
-    var compon1 = this.params.componentone;// $("#txtComponente1").val();
-    var compon2 = this.params.componenttwo;//$("#txtComponente2").val();
-    // var componBin1 = "";
-    // var componBin2 = "";
+    var compon1 = this.params.componentone;
+    var compon2 = this.params.componenttwo;
+
     var compon1Bin = "";
     var compon2Bin = "";
 
@@ -118,72 +113,27 @@ export class HexaToDecimalPage implements OnInit {
       console.log("compon1Bin", compon1Bin);
 
       if (compon1Bin == "0") {
-        this.error('Solo se permiten caracteres del 0-9 y de la A-F');
-
-        const invalidControl = this.el.nativeElement.querySelector('#componentone');
-        console.log("invalidControl", invalidControl);
-
-
-        if (invalidControl) {
-          invalidControl.focus();
-        }
-
-        // this.renderer.selectRootElement('#componentone').focus();
-        // $("#txtComponente1").focus();
+        this.presentAlert('Solo se permiten caracteres del 0-9 y de la A-F');
         return false;
       } else {
-        // this.params.componentone.
         this.binaryComponentOne = compon1Bin;
-        // $("#txtBinario1").val(compon1Bin);
       }
     } else {
-      this.error('Componente No. 1 incorrecto - Recuerde que es de 32 Bytes');
-
-      // const invalidControl = this.el.nativeElement.querySelector('#this.params.componentone}');
-      const invalidControl = this.el.nativeElement.querySelector('#componentone');
-      console.log("invalidControl", invalidControl);
-
-      if (invalidControl) {
-        invalidControl.focus();
-      }
-
-
-      // this.renderer.invokeElementMethod(this.params.componentone, 'focus');
-
-      // let element = this.renderer.selectRootElement('#componentone');
-      // console.log("element", element);
-      // element.focus();
-
-      // this.renderer.selectRootElement('#componentone').focus();
-      // $("#txtComponente1").focus();
+      this.presentAlert('Componente No. 1 incorrecto - Recuerde que es de 32 Bytes');
       return false;
     }
 
     if (compon2 != "" && compon2.length == 32) {
       compon2Bin = this.hexadecimalABinario(compon2);
-      if (compon2Bin == "0") {
-        this.error('Solo se permiten caracteres del 0-9 y de la A-F');
-        const invalidControl = this.el.nativeElement.querySelector('.ng-invalid');
 
-        if (invalidControl) {
-          invalidControl.focus();
-        }
-        // this.renderer.selectRootElement('#componenttwo').focus();
-        // $("#txtComponente2").focus();
+      if (compon2Bin == "0") {
+        this.presentAlert('Solo se permiten caracteres del 0-9 y de la A-F');
         return false;
       } else {
         this.binaryComponentTwo = compon2Bin;
-        // $("#txtBinario2").val(compon2Bin);
       }
     } else {
-      this.error('Componente No. 2 incorrecto - Recuerde que es de 32 Bytes');
-      const invalidControl = this.el.nativeElement.querySelector('.ng-invalid');
-
-      if (invalidControl) {
-        invalidControl.focus();
-      }
-      // this.renderer.selectRootElement('#componenttwo').focus();
-      // $("#txtComponente2").focus();
+      this.presentAlert('Componente No. 2 incorrecto - Recuerde que es de 32 Bytes');
       return false;
     }
 
@@ -192,9 +142,6 @@ export class HexaToDecimalPage implements OnInit {
 
     this.binaryCombinedKey = claveBinaria;
     this.params.combinedkey = claveHexa;
-
-    // $("#txtBinarioCl").val(claveBinaria);
-    // $("#txtClave").val(claveHexa);
   }
 
   hexadecimalABinario(hexadecimal) {
@@ -204,7 +151,7 @@ export class HexaToDecimalPage implements OnInit {
 
     for (let i = 0; i < longitudHexa; i++) {
       let hexaBin = hexadecimal[i];
-      let posHexa = this.digitoHex.indexOf(hexaBin);	//Obtiene la posición del numero o letra obtenido
+      let posHexa = this.digitoHex.indexOf(hexaBin);
       if (posHexa == -1) {
         error = true;
         i = longitudHexa;
@@ -220,9 +167,15 @@ export class HexaToDecimalPage implements OnInit {
     }
   }
 
-  error(etexto) {
-    // alertify.error(etexto);
-    alert(etexto);
-    return false;
+  async presentAlert(etexto: string) {
+    const alert = await this.alertController.create({
+      header: 'Información',
+      subHeader: 'Mensaje Importante',
+      message: etexto,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
+
 }
