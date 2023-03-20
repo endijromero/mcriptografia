@@ -39,7 +39,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
-    "@ionic/angular": "^6.1.9",
+    "@ionic/angular": "^6.6.2",
     "@ionic/cordova-builders": "^8.0.0",
     "config-cordova": "^0.8.4",
     "cordova-android": "^10.1.2",
@@ -52,6 +52,7 @@
     "jquery": "^3.6.4",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.41",
+    "native-run": "^1.7.2",
     "rxjs": "^7.5.7",
     "tslib": "^2.3.0",
     "zone.js": "^0.11.8"
