@@ -1,26 +1,8 @@
 [
   {
     "icon": "lock-closed-sharp",
-    "nombres": "Diego Fernando",
-    "apellidos": "Molina Guzman",
-    "alias": "Diego Molina"
-  },
-  {
-    "icon": "lock-closed-sharp",
-    "nombres": "Eliecer Gilberto",
-    "apellidos": "Espinosa Espinosa",
-    "alias": "Eliecer Espinosa"
-  },
-  {
-    "icon": "lock-closed-sharp",
     "nombres": "Endi",
     "apellidos": "Romero",
     "alias": "Endi Romero"
-  },
-  {
-    "icon": "lock-closed-sharp",
-    "nombres": "Miguel Angel",
-    "apellidos": "Garcia Murillo",
-    "alias": "Miguel Garcia"
   }
 ]
