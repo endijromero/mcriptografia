@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'atbash',
     loadChildren: () => import('./pages/atbash/atbash.module').then( m => m.AtbashPageModule)
   },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
 ];
 
 @NgModule({

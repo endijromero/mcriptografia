@@ -9,5 +9,10 @@
     "icon": "lock-closed-sharp",
     "name": "Atbash",
     "redirectTo": "/atbash"
+  },
+  {
+    "icon": "lock-closed-sharp",
+    "name": "Contacto",
+    "redirectTo": "/contact"
   }
 ]

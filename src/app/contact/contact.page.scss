@@ -1,0 +1,31 @@
+ion-label {
+  --color: #000000;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  font-size: large;
+}
+
+ion-card,
+ion-card-header {
+  height: 90%;
+}
+
+ion-input {
+  border: #000000;
+}
+
+.input-field {
+  background: rgba(250, 250, 250, 1);
+  border: solid 1px rgba(218, 218, 218, 1);
+  margin-bottom: 16px;
+  height: 50px;
+  border-radius: 20px;
+  padding-left: 16px;
+}
+
+.frame-style {
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}

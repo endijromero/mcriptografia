@@ -1,0 +1,43 @@
+<app-header [titulo]="nombre"></app-header>
+<ion-content [fullscreen]="true" class="ion-page ion-padding">
+  <ion-list class="frame-style">
+    <ion-card>
+      <ion-row class="mt-5">
+        <ion-col>
+          <ion-label style="text-align: justify;">Hola, por favor ingrese sus datos de contacto y una descripción por la cual nos contacta, a vuelta de correo resolveremos sus inquietudes.</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-card-content>
+        <ion-row class="mt-5">
+          <ion-col>
+            <ion-label position="stacked" class="bpinput">Nombre</ion-label>
+            <ion-input class="input-field" type="text" name="nombre" placeholder="Nombre"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="mt-5">
+          <ion-col>
+            <ion-label position="stacked" class="bpinput">Correo</ion-label>
+            <ion-input class="input-field" type="text" name="correo" placeholder="Correo"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="mt-5">
+          <ion-col>
+            <ion-label position="stacked" class="bpinput">Asunto</ion-label>
+            <ion-input class="input-field" type="text" name="asunto" placeholder="Asunto"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="mt-5">
+          <ion-col>
+            <ion-label position="stacked" class="bpinput">Mensaje</ion-label>
+            <ion-input class="input-field" type="text" name="asunto" placeholder="Mensaje"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <div style="position: relative;align-items: center;text-align: center;">
+        <ion-button type="submit" (click)="enviarAsunto()">
+          Enviar Solicitud
+        </ion-button>
+      </div>
+    </ion-card>
+  </ion-list>
+</ion-content>

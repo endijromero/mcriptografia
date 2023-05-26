@@ -1,4 +1,3 @@
-<!-- <app-header [titulo]="nombre || 'Input Forms'"></app-header> -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -7,41 +6,9 @@
     <ion-title color="primary">{{nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
-<!-- <ion-content> -->
-<!-- <ion-list>
-    <ion-item *ngFor="let c of integrantes | async" [routerLink]="c.redirectTo" detail>
-      <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
-      {{ c.name }}
-      <br>
-    </ion-item>
-  </ion-list> -->
-
 <ion-content [fullscreen]="true" class="ion-page ion-padding">
-  <!-- <ion-grid class="bgInicio">
-    <ion-list>
-      <ion-row class="mt-5">
-        <ion-item *ngFor="let c of integrantes | async">
-          <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
-          <ion-row class="mt-5">
-            {{ c.alias }}
-          </ion-row>
-        </ion-item>
-      </ion-row>
-    </ion-list>
-  </ion-grid> -->
-
   <ion-list class="bgInicioImg">
-
     <ion-grid>
-
-
       <ion-row *ngIf="!integrantes" class="ion-justify-content-center">
         <h4 style="color: #666666">
           <strong>
@@ -57,7 +24,6 @@
           </h5>
         </ion-row>
       </ng-container>
-
     </ion-grid>
   </ion-list>
 </ion-content>
